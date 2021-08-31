@@ -37,3 +37,16 @@
 	git commit -m "comentario.."
 7. Subir contenido al repositorio web
 	git push origin master
+
+- Bajar contenido -> "Pull"
+
+1. Abrir consola
+	- Windows: Símbolo del sistema.
+	- Mac y Linux: Terminal
+2. Copiar la dirección del repositorio local.
+3. Accedemos al repositorio:
+	cd <dir_rep_local>
+	cd C:\Users\juand\Documents\Cuero	(ejemplo)
+4. Establecer conexión si no existe
+5. Bajar los archivos con el comando:
+	git pull origin master
