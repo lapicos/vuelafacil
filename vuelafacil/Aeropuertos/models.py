@@ -18,8 +18,8 @@ class Aeropuerto(models.Model):
         return len(aeropuertos)
 
 class Ruta(models.Model):
-    origen = models.ForeignKey(Aeropuerto, on_delete=models.CASCADE)
-    destino = models.ForeignKey(Aeropuerto, on_delete=models.CASCADE)
+    origen = models.ForeignKey(Aeropuerto, on_delete=models.SET_NULL, null=True, related_name='+')
+    destino = models.ForeignKey(Aeropuerto, on_delete=models.SET_NULL, null=True, related_name='+')
 
     def __str__(self):
         return self.origen.iata + "-" + self.destino
