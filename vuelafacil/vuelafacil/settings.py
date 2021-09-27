@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "Aeropuertos",
     'rest_framework',
     'rest_framework.authtoken',
+    'Usuarios'
 ]
 
 REST_FRAMEWORK = {
