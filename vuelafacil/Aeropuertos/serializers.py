@@ -7,7 +7,7 @@ class AeropuertoSerial(serializers.ModelSerializer):
         model = Aeropuerto
         fields = '__all__'
 
-class RutaSerial(serializers.ModelSerializer):
+class RutaSerial(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ruta
         fields = '__all__'

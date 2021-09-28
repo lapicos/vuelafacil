@@ -1,7 +1,7 @@
 from django.db import models
 
 class Aeropuerto(models.Model):
-    coaci = models.CharField(max_length=4)
+    oaci = models.CharField(max_length=4, primary_key=True)
     iata = models.CharField(max_length=3)
     nombre = models.CharField(max_length=200)
     ciudad = models.CharField(max_length=200)
