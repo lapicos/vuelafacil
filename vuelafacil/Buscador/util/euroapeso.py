@@ -33,5 +33,5 @@ def precioEuro():
 
  #funcion para dar el valor del viaje en pesos
    
-def convertir_euros_a_pesos(cantidad_euros, valor_euro_pesos):
-    return (cantidad_euros * valor_euro_pesos)
+def convertir_euros_a_pesos(cantidad_euros):
+    return (cantidad_euros * precioEuro())
