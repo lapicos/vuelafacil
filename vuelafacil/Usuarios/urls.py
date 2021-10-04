@@ -9,6 +9,7 @@ router.register('usuarios', UsuariosAPI)
 router.register('perfiles', PerfilesAPI)
 
 urlpatterns=[
-    path('crud/', include(router.urls))
-
+    path('crud/', include(router.urls)),
+    path('logout', Logout.as_view()),
+    path('login', Login.as_view())
 ]
