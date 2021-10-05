@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="content-language" content="es-co">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!-- mobile metas -->
+
+        <!--
+
+        Elaborado por Jaens Ramirez
+
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- site metas -->
+    	 <title>VuelaFacil | Agencia de consulturia y venta de tickets aereos.</title>
+    
+        <meta name="description" content="VuelaFacil es una agencia de viajes colombiana que ofrece un servicio de consultoría y venta de tiquetes para rutas aéreas ">
+        <meta name="robots" content="index,follow">
+        <meta name="author" content="Jaens Ramirez">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="VuelaFacil | Agencia de consulturia y venta de tickets aereos">
+        <meta property="og:description" content="VuelaFacil es una agencia de viajes colombiana que ofrece un servicio de consultoría y venta de tiquetes para rutas aéreas">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/faviconVuela.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/hero-slider.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/datepicker.css">
+        <link rel="stylesheet" href="css/tooplate-style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+
+<body>
+    <div class="tm-main-content" id="top"> 
+        <div class="tm-top-bar" id="tm-top-bar">
+            <div class="container">
+                <div class="row" id="pad">
+                    <nav class="navbar navbar-expand-lg narbar-light">
+                        <a class="navbar-brand mr-auto" href="index.html">
+                            <img src="img/VuelaFacilLogo.png" alt="Site logo">
+                        </a>
+                        <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                <a class="nav-link active" href="#top">inicio <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Mis viajes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#recommended-places">Lugares recomendados</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="mostrar();">Registrarme</a>
+                                </li>
+                            </ul>
+                        </div>                            
+                    </nav>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- .tm-top-bar -->
+    
+    <section class="banner" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <section id="first-tab-group" class="tabgroup">
+                        <div id="tab1">
+                            <div class="submit-form">
+                                <h4>Busca tu vuelo:</h4>
+                                <form id="form-submit" action="" method="get">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="from">Origen:</label>
+                                                <select required name='from' onchange='this.form.()'>
+                                                    <option value="">Ciudad origen...</option>
+                                                    <option value="Cambodia">Cambodia</option>
+                                                    <option value="Hong Kong">Hong Kong</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="Korea">Korea</option>
+                                                    <option value="Laos">Laos</option>
+                                                    <option value="Myanmar">Myanmar</option>
+                                                    <option value="Singapore">Singapore</option>
+                                                    <option value="Thailand">Thailand</option>
+                                                    <option value="Vietnam">Vietnam</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="to">Destino:</label>
+                                                <select required name='to' onchange='this.form.()'>
+                                                    <option value="">Ciudad destino...</option>
+                                                    <option value="Cambodia">Cambodia</option>
+                                                    <option value="Hong Kong">Hong Kong</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="Korea">Korea</option>
+                                                    <option value="Laos">Laos</option>
+                                                    <option value="Myanmar">Myanmar</option>
+                                                    <option value="Singapore">Singapore</option>
+                                                    <option value="Thailand">Thailand</option>
+                                                    <option value="Vietnam">Vietnam</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="departure">Ida:</label>
+                                                <input name="deparure" type="text" class="form-control date" id="deparure" placeholder="Fecha de ida..." required onchange='this.form.()'>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="return">Vuelta:</label>
+                                                <input name="return" type="text" class="form-control date" id="return" placeholder="Fecha de vuelta..." required onchange='this.form.()'>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="radio-select">
+                                                <div class="form-group tm-form-element tm-form-element-2">            
+                                                    <select name="adult" class="form-control tm-select" id="adult" required onchange='this.form.()'>
+                                                        <option value="">Cantidad de pasajes...</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                     <i class="fa fa-2x fa-user tm-form-element-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <button type="submit" id="form-submit" class="btn">Buscar</button>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
+    <div class="tabs-content" id="recommended-places">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Lugares recomendados para ti</h2>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="col-md-4">
+                            <ul class="tabs clearfix" data-tabgroup="third-tab-group">
+                                <li><a href="#first-recommendation" class="active">San Andrés<i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#suitroom">Cartagena de Indias <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#third-recommendation">Santa Marta <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#fourth-recommendation">New York City<i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#fifth-recommendation">Paris<i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#sixth-recommendation">Barranquilla <i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <section id="third-tab-group" class="recommendedgroup">
+                            <div id="first-recommendation">
+                                <img src="img/SanAndres.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Te recomendamos sin dudas visitar San Andrés, tanto por sus paisajes, como por sus playas, su mar de los 7 colores, sus tradiciones únicas en el mundo y su gastronomía.</h4>
+                                            <span>Playas de San Andrés</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="suitroom">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="owl-suiteroom" class="owl-carousel owl-theme">
+                                            <div class="item">
+                                                <div class="suiteroom-item">
+                                                    <img src="img/cartagena.webp" alt="">
+                                                    <div class="text-content">
+                                                        <h4>Pasear por sus calles es como transportarse a una de las novelas de Gabriel García Márquez o a las crónicas de los conquistadores españoles durante la colonización; sus calles desprenden historia y realismo mágico.</h4>
+                                                        <span>Ciudad de Cartagena</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="suiteroom-item">
+                                                    <img src="img/castillocartagena.webp" alt="">
+                                                    <div class="text-content">
+                                                        <h4>Cartagena, esa misma que resistió ataques de todo aquel que la quería para sí con la rigidez de su Castillo de San Felipe es llamada solemnemente como “La Heroica”</h4>
+                                                        <span>Castillo San Felipe de Barajas</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="suiteroom-item">
+                                                    <img src="img/parquenatural.webp" alt="">
+                                                    <div class="text-content">
+                                                        <h4>Es un importante y complejo ecosistema  de arrecifes coralinos y manglares, son determinados como las maravillas naturales de mayor belleza debido a su gran colorido que resplandece con las aguas cristalinas.</h4>
+                                                        <span>Parque Nacional Natural Corales del Rosario y San Bernardo.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="third-recommendation">
+                                <img src="img/SantaMarta.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Es la puerta de entrada a algunos lugares muy especiales a lo largo de la costa caribeña de Colombia.</h4>
+                                            <span>Santa Marta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="fourth-recommendation">
+                                <img src="img/EstatuaLibertad.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Desborda diversidad y emoción, desde las icónicas atracciones que has visto en la televisión y en las películas hasta joyas ocultas que esperan ser descubiertas.</h4>
+                                            <span>New York City</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="fifth-recommendation">
+                                <img src="img/Paris.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>La capital francesa tiene mucho que ofrecer. Siglos de historia han dejado estructuras significativas que también han sido el trasfondo de historias de amor, guerras y revoluciones.</h4>
+                                            <span>Paris</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="sixth-recommendation">
+                                <img src="img/barranquilla.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>“La Puerta de Oro de Colombia”, “La Arenosa”, o la muy popular “Curramba” desborda sabor por todos sus poros y las melodías pegajosas de la cumbia comienzan a retumbar en los oídos de quien busca un destino único.</h4>
+                                            <span>Barranquilla</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <section id="most-visited">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Lugares más visitados</h2>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div id="owl-mostvisited" class="owl-carousel owl-theme">
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/Bangkok.jpg" alt="" style="width: 1100px"> 
+                                <div class="text-content">
+                                    <h4>Empieza a planificar tu viaje a Bangkok</h4>
+                                    <span>Bangkok</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Lorem ipsum dolor</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-03.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Proin dignissim</h4>
+                                    <span>Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-04.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Fusce sed ipsum</h4>
+                                    <span>Hollywood</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Vivamus egestas</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Aliquam elit metus</h4>
+                                    <span>New York</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-03.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Phasellus pharetra</h4>
+                                    <span>Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-04.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>In in quam efficitur</h4>
+                                    <span>Hollywood</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Sed faucibus odio</h4>
+                                    <span>NEW YORK</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Donec varius porttitor</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Envianos tu mensaje:</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <form id="contact" action="#" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="Tu nombre..." required>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <input name="email" type="text" class="form-control" id="email" placeholder="Tu email..." required>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Tu mensaje..." required></textarea>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="btn">Enviar mensaje</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="primary-button">
+                        <a href="#" class="scroll-top">Volver arriba</a>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <p>Copyright &copy; 2021 Agencia de Consultoria de Viajes VuelaFacil
+                
+                | Diseño: <em>Jaens Ramirez</em></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    
+    <script src="js/datepicker.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        
+
+        // navigation click actions 
+        $('.scroll-link').on('click', function(event){
+            event.preventDefault();
+            var sectionID = $(this).attr("data-id");
+            scrollToID('#' + sectionID, 750);
+        });
+        // scroll to top action
+        $('.scroll-top').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop:0}, 'slow');         
+        });
+        // mobile nav toggle
+        $('#nav-toggle').on('click', function (event) {
+            event.preventDefault();
+            $('#main-nav').toggleClass("open");
+        });
+    });
+    // scroll function
+    function scrollToID(id, speed){
+        var offSet = 0;
+        var targetOffset = $(id).offset().top - offSet;
+        var mainNav = $('#main-nav');
+        $('html,body').animate({scrollTop:targetOffset}, speed);
+        if (mainNav.hasClass("open")) {
+            mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+            mainNav.removeClass("open");
+        }
+    }
+    if (typeof console === "undefined") {
+        console = {
+            log: function() { }
+        };
+    }
+
+    function mostrar(){
+        alert('function mostrar')
+    }
+    </script>
+</body>
+</html>
