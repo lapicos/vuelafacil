@@ -3,18 +3,18 @@ import amadeus
 from amadeus import Client , ResponseError
 from util.euroapeso import convertir_euros_a_pesos
 
-def consultarAmadeus(origin, destination, departureDate, returnDate, adults): 
+def consultarAmadeus(self, origin, destination, departureDate, returnDate, adults): 
     amadeus = Client(
         client_id='jmoHqSjWfqG1c48FiYzfVS26wohH8Am7',
         client_secret='Anbp8Ek1ZW2ZPsHq'
     )
     try:
         response = amadeus.shopping.flight_offers_search.get(
-            originLocationCode='BOG', 
-            destinationLocationCode='CTG', 
-            departureDate='2021-12-14', 
-            returnDate='2021-12-15', 
-            adults=1)
+            originLocationCode=self.origin, 
+            destinationLocationCode=self.destination, 
+            departureDate=self.departureDate, 
+            returnDate=self.returnDate, 
+            adults=self.adults)
     except ResponseError as error:
         raise error
     respuesta=response.result
