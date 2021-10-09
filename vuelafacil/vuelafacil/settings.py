@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +46,36 @@ INSTALLED_APPS = [
     'Checkout',
 
 ]
+
+JAZZMIN_SETTINGS = {
+    'site_title': 'VuelaFacil',
+    'site_header': 'Mi sitio',
+    'site_logo': 'img/faviconVuela.png',
+    'welcome_sign': 'Inicio de sesión',
+    'sign_logo': 'img/faviconVuela.png',
+    "site_logo_classes": "img-square",
+    "copyright": " Jaens Ramirez",
+    "show_sidebar": True,
+    "order_with_respect_to": ["auth", "Usuarios", "Checkout", "Aeropuertos"],
+    'icons': {
+        'Aeropuertos.Aeropuerto': 'fas fa-plane',
+        'auth.user': 'fas fa-user',
+        'auth.Group': 'fas fa-users',
+        'Checkout.Voucher': 'fas fa-shopping-cart',
+        'Checkout.Pago': 'fas fa-credit-card',
+        'Checkout.Mensaje': 'fas fa-envelope-open',
+        'Usuarios.Perfil': 'fas fa-user-circle'
+    },
+    'topmenu_links':[
+        {'app': 'Aeropuertos'},
+        {'app': 'Checkout'},
+        {"app": "auth"},
+        {"app": "Usuarios"}
+    ],
+    "changeform_format": "horizontal_tabs",
+    "show_ui_builder" : True,
+    
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -68,7 +99,7 @@ ROOT_URLCONF = 'vuelafacil.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(os.path.join(BASE_DIR, "Templates"))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,7 +121,7 @@ WSGI_APPLICATION = 'vuelafacil.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
     }
 }
 
@@ -117,7 +148,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -132,6 +163,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'staticfiles'),
+    )
+
+if not os.path.isdir(STATIC_ROOT):
+    os.makedirs(STATIC_ROOT, mode=0o755)
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -52,8 +52,8 @@ p {
     cursor: pointer;
 }
 .navbar-collapse.collapse{
-	  display: flex!important;
-	  flex-basis: auto
+	display: flex!important;
+	flex-basis: auto
     padding-right: 15px;
     padding-left: 170px;
     padding-top: 20px;

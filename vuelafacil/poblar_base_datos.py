@@ -17,7 +17,7 @@ aeropuertos = aeropuertos.drop_duplicates(subset=['IATA'])
 for indice, fila in aeropuertos.iterrows():
     Aeropuerto.objects.create(
         iata = fila['IATA'],
-        iaco = fila["IACO"],
+        oaci = fila["IACO"],
         nombre = fila['NOMBRE'],
         ciudad = fila['CIUDAD ESPANOL'],
         pais = fila['PAIS ESPAÑOL'],

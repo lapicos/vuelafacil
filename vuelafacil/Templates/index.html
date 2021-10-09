@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,19 +26,19 @@
         <meta property="og:title" content="VuelaFacil | Agencia de consulturia y venta de tickets aereos">
         <meta property="og:description" content="VuelaFacil es una agencia de viajes colombiana que ofrece un servicio de consultoría y venta de tiquetes para rutas aéreas">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="img/faviconVuela.png">
+        <link rel="shortcut icon" href="{% static 'img/faviconVuela.png' %}">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/fontAwesome.css">
-        <link rel="stylesheet" href="css/hero-slider.css">
-        <link rel="stylesheet" href="css/owl-carousel.css">
-        <link rel="stylesheet" href="css/datepicker.css">
-        <link rel="stylesheet" href="css/tooplate-style.css">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}">
+        <link rel="stylesheet" href="{% static 'css/hero-slider.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+        <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
     </head>
 
 <body>
@@ -45,8 +47,8 @@
             <div class="container">
                 <div class="row" id="pad">
                     <nav class="navbar navbar-expand-lg narbar-light">
-                        <a class="navbar-brand mr-auto" href="index.html">
-                            <img src="img/VuelaFacilLogo.png" alt="Site logo">
+                        <a class="navbar-brand mr-auto" href="http://localhost:8000">
+                            <img src="{% static 'img/VuelaFacilLogo.png' %}" alt="Site logo">
                         </a>
                         <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -83,23 +85,16 @@
                         <div id="tab1">
                             <div class="submit-form">
                                 <h4>Busca tu vuelo:</h4>
-                                <form id="form-submit" action="" method="get">
+                                <form id="form-submit" action="http://localhost:8000" method="post">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="from">Origen:</label>
                                                 <select required name='from' onchange='this.form.()'>
                                                     <option value="">Ciudad origen...</option>
-                                                    <option value="Cambodia">Cambodia</option>
-                                                    <option value="Hong Kong">Hong Kong</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Korea">Korea</option>
-                                                    <option value="Laos">Laos</option>
-                                                    <option value="Myanmar">Myanmar</option>
-                                                    <option value="Singapore">Singapore</option>
-                                                    <option value="Thailand">Thailand</option>
-                                                    <option value="Vietnam">Vietnam</option>
+                                                    {% for ciudad in ciudades %}
+                                                        <option>{{ciudad}}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </fieldset>
                                         </div>
@@ -108,16 +103,9 @@
                                                 <label for="to">Destino:</label>
                                                 <select required name='to' onchange='this.form.()'>
                                                     <option value="">Ciudad destino...</option>
-                                                    <option value="Cambodia">Cambodia</option>
-                                                    <option value="Hong Kong">Hong Kong</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Korea">Korea</option>
-                                                    <option value="Laos">Laos</option>
-                                                    <option value="Myanmar">Myanmar</option>
-                                                    <option value="Singapore">Singapore</option>
-                                                    <option value="Thailand">Thailand</option>
-                                                    <option value="Vietnam">Vietnam</option>
+                                                    {% for ciudad in ciudades %}
+                                                        <option>{{ciudad}}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </fieldset>
                                         </div>
@@ -194,7 +182,7 @@
                     <div class="col-md-8">
                         <section id="third-tab-group" class="recommendedgroup">
                             <div id="first-recommendation">
-                                <img src="img/SanAndres.jpg" alt="">
+                                <img src="{% static 'img/SanAndres.jpg' %}" alt="">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="text-content">
@@ -210,7 +198,7 @@
                                         <div id="owl-suiteroom" class="owl-carousel owl-theme">
                                             <div class="item">
                                                 <div class="suiteroom-item">
-                                                    <img src="img/cartagena.webp" alt="">
+                                                    <img src="{% static 'img/cartagena.webp' %}" alt="">
                                                     <div class="text-content">
                                                         <h4>Pasear por sus calles es como transportarse a una de las novelas de Gabriel García Márquez o a las crónicas de los conquistadores españoles durante la colonización; sus calles desprenden historia y realismo mágico.</h4>
                                                         <span>Ciudad de Cartagena</span>
@@ -219,7 +207,7 @@
                                             </div>
                                             <div class="item">
                                                 <div class="suiteroom-item">
-                                                    <img src="img/castillocartagena.webp" alt="">
+                                                    <img src="{% static 'img/castillocartagena.webp' %}" alt="">
                                                     <div class="text-content">
                                                         <h4>Cartagena, esa misma que resistió ataques de todo aquel que la quería para sí con la rigidez de su Castillo de San Felipe es llamada solemnemente como “La Heroica”</h4>
                                                         <span>Castillo San Felipe de Barajas</span>
@@ -228,7 +216,7 @@
                                             </div>
                                             <div class="item">
                                                 <div class="suiteroom-item">
-                                                    <img src="img/parquenatural.webp" alt="">
+                                                    <img src="{% static 'img/parquenatural.webp' %}" alt="">
                                                     <div class="text-content">
                                                         <h4>Es un importante y complejo ecosistema  de arrecifes coralinos y manglares, son determinados como las maravillas naturales de mayor belleza debido a su gran colorido que resplandece con las aguas cristalinas.</h4>
                                                         <span>Parque Nacional Natural Corales del Rosario y San Bernardo.</span>
@@ -240,7 +228,7 @@
                                 </div>
                             </div>
                             <div id="third-recommendation">
-                                <img src="img/SantaMarta.jpg" alt="">
+                                <img src="{% static 'img/SantaMarta.jpg' %}" alt="">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="text-content">
@@ -251,7 +239,7 @@
                                 </div>
                             </div>
                             <div id="fourth-recommendation">
-                                <img src="img/EstatuaLibertad.jpg" alt="">
+                                <img src="{% static 'img/EstatuaLibertad.jpg' %}" alt="">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="text-content">
@@ -262,7 +250,7 @@
                                 </div>
                             </div>
                             <div id="fifth-recommendation">
-                                <img src="img/Paris.jpg" alt="">
+                                <img src="{% static 'img/Paris.jpg' %}" alt="">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="text-content">
@@ -273,7 +261,7 @@
                                 </div>
                             </div>
                             <div id="sixth-recommendation">
-                                <img src="img/barranquilla.jpg" alt="">
+                                <img src="{% static 'img/barranquilla.jpg' %}" alt="">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="text-content">
@@ -305,7 +293,7 @@
                     <div id="owl-mostvisited" class="owl-carousel owl-theme">
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/Bangkok.jpg" alt="" style="width: 1100px"> 
+                                <img src="{% static 'img/Bangkok.jpg' %}" alt="" style="width: 1100px"> 
                                 <div class="text-content">
                                     <h4>Empieza a planificar tu viaje a Bangkok</h4>
                                     <span>Bangkok</span>
@@ -314,7 +302,7 @@
                         </div>
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/place-02.jpg" alt="">
+                                <img src="{% static 'img/place-02.jpg' %}" alt="">
                                 <div class="text-content">
                                     <h4>Lorem ipsum dolor</h4>
                                     <span>Tokyo</span>
@@ -323,7 +311,7 @@
                         </div>
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/place-03.jpg" alt="">
+                                <img src="{% static 'img/place-03.jpg' %}" alt="">
                                 <div class="text-content">
                                     <h4>Proin dignissim</h4>
                                     <span>Paris</span>
@@ -332,7 +320,7 @@
                         </div>
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/place-04.jpg" alt="">
+                                <img src="{% static 'img/place-04.jpg' %}" alt="">
                                 <div class="text-content">
                                     <h4>Fusce sed ipsum</h4>
                                     <span>Hollywood</span>
@@ -341,7 +329,7 @@
                         </div>
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/place-02.jpg" alt="">
+                                <img src="{% static 'img/place-02.jpg' %}" alt="">
                                 <div class="text-content">
                                     <h4>Vivamus egestas</h4>
                                     <span>Tokyo</span>
@@ -350,7 +338,7 @@
                         </div>
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/place-01.jpg" alt="">
+                                <img src="{% static 'img/place-01.jpg' %}" alt="">
                                 <div class="text-content">
                                     <h4>Aliquam elit metus</h4>
                                     <span>New York</span>
@@ -359,7 +347,7 @@
                         </div>
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/place-03.jpg" alt="">
+                                <img src="{% static 'img/place-03.jpg' %}" alt="">
                                 <div class="text-content">
                                     <h4>Phasellus pharetra</h4>
                                     <span>Paris</span>
@@ -368,7 +356,7 @@
                         </div>
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/place-04.jpg" alt="">
+                                <img src="{% static 'img/place-04.jpg' %}" alt="">
                                 <div class="text-content">
                                     <h4>In in quam efficitur</h4>
                                     <span>Hollywood</span>
@@ -377,7 +365,7 @@
                         </div>
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/place-01.jpg" alt="">
+                                <img src="{% static 'img/place-01.jpg' %}" alt="">
                                 <div class="text-content">
                                     <h4>Sed faucibus odio</h4>
                                     <span>NEW YORK</span>
@@ -386,7 +374,7 @@
                         </div>
                         <div class="item col-md-12">
                             <div class="visited-item">
-                                <img src="img/place-02.jpg" alt="">
+                                <img src="{% static 'img/place-02.jpg' %}" alt="">
                                 <div class="text-content">
                                     <h4>Donec varius porttitor</h4>
                                     <span>Tokyo</span>
@@ -467,20 +455,19 @@
     </footer>
 
 
-    
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="{% static "js/vendor/bootstrap.min.js" %}"></script>
     
-    <script src="js/datepicker.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{% static "js/datepicker.js" %}"></script>
+    <script src="{% static "js/plugins.js" %}"></script>
+    <script src="{% static "js/main.js" %}"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    <script type=""{% static "text/javascript" %}"">
     $(document).ready(function() {
 
         

@@ -5,8 +5,8 @@ from util.euroapeso import convertir_euros_a_pesos
 
 def consultarAmadeus(self, origin, destination, departureDate, returnDate, adults): 
     amadeus = Client(
-        client_id='jmoHqSjWfqG1c48FiYzfVS26wohH8Am7',
-        client_secret='Anbp8Ek1ZW2ZPsHq'
+        client_id='7zC4dFP6xdA6QaBjezotG7kJQ7VgaEO0',
+        client_secret='yT8f4JjANQyDICxV'
     )
     try:
         response = amadeus.shopping.flight_offers_search.get(
