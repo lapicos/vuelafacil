@@ -21,11 +21,11 @@ class Voucher(models.Model):
     precio_total=models.FloatField()
     aerolinea = models.CharField(max_length=200)
     idUsuario = models.CharField(max_length=200)
-    mombreUsuario = models.CharField(max_length=200)
+    nombreUsuario = models.CharField(max_length=200)
     apellidoUsuario= models.CharField(max_length=200)
     nVuelo= models.CharField(max_length=200)
     nPasajeros = models.CharField(max_length=200)
-    
+        
     def __str__(self):
         return self.idTiquete
 
@@ -65,7 +65,7 @@ class Mensaje(models.Model):
         return self.infopago
 
     def enviarMensaje(self):
-        return 'Gracias por comprar con nosotros! tu itinerario en informacion de pago son:'
+        return 'Gracias por comprar con nosotros! tu itinerario e informacion de pago son:'
         + self.infopago.infoPago() + ' ' + self.inforuta.infoRuta()
 
 

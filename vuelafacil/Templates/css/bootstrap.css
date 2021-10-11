@@ -1393,6 +1393,16 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+
+.container_sm {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 180px;
+}
+
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -2404,9 +2414,7 @@ input[type="search"] {
   input[type="date"],
   input[type="time"],
   input[type="datetime-local"],
-  input[type="month"] {
-    line-height: 34px;
-  }
+  input[type="month"] 
   input[type="date"].input-sm,
   input[type="time"].input-sm,
   input[type="datetime-local"].input-sm,
