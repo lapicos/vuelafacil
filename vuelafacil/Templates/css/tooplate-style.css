@@ -53,12 +53,72 @@ p {
 }
 .navbar-collapse.collapse{
 	  display: flex!important;
-	  flex-basis: auto
+	  flex-basis: auto;
     padding-right: 15px;
     padding-left: 170px;
     padding-top: 20px;
     font-size: 17px;
   }
+  
+.columns_1{
+	float: left;
+	width: 100%;
+	padding: 0px;
+}
+.columns_2l{
+	float: left;
+	width: 40%;
+	padding: 0px;
+}
+
+.columns_2r{
+	float: right;
+	width: 40%;
+	padding: 0px;
+}
+.columns_3{
+	float: left;
+	width: 32%;
+	padding: 0px;
+}
+.columns_3l{
+	float: left;
+	width: 20%;
+	padding: 0px;
+}
+
+.columns_3c{
+	float: none;
+	width: 1%;
+	padding: 0px;
+}
+
+.columns_3r{
+	float: right;
+	width: 1%;
+	padding: 0px;
+}
+.glyphicon.glyphicon-plane {
+	font-size: 75px;
+} 
+
+.fancyLine1 {
+	border-bottom: 20px solid steelblue;
+	border-radius: 15px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fancyLine2 {
+	border-bottom: 20px solid steelblue;
+	border-radius: 15px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
 
 .tm-top-bar-bg {
     height: 119px;
@@ -107,7 +167,8 @@ p {
 }
 
 .navbar-toggler-icon {
-    background-image: url(data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(104, 199, 187)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E);
+    background-image: url(data:image/svg+xml;charset=utf8,%3Csvg) viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath
+	 stroke='rgb(104, 199, 187)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E)
 }
 
 .tm-top-bar .navbar-expand-lg .navbar-nav .nav-link {
@@ -327,6 +388,11 @@ p {
 	display: inline-block;
 }
 
+.submit-form .date1 {
+	width: 45%;
+}
+
+
 .submit-form .date {
 	margin-bottom: 10px;
 	width: 100%;
@@ -344,9 +410,13 @@ p {
 }
 
 .submit-form input {
-	margin-top: 12px;
+	margin-top: 0px;
 	margin-left: 5px;
 	cursor: pointer;
+	line-height: 2.1;
+	width: 100%
+
+
 }
 
 .submit-form .radio-select {
