@@ -4,6 +4,7 @@
 Integrantes: 
 * Yershon Estiven Caro Parra
 * Jaes Anderson Ramirez Sierra
+* José Monroy
 * Luis Alejandro Pico
 
 # Introducción:
