@@ -1,7 +1,7 @@
 import pandas as pd 
 import amadeus
 from amadeus import Client , ResponseError
-#from util.euroapeso import convertir_euros_a_pesos
+from Buscador.util.euroapeso import convertir_euros_a_pesos
 
 class buscador:
     originLocationCode=""
@@ -40,7 +40,8 @@ class buscador:
             data.loc[id,'departureDuration']=respuesta['data'][id]['itineraries'][0]['duration']
             departureStop=len(respuesta['data'][id]['itineraries'][0]['segments'])-1
             data.loc[id, 'departureStop']= departureStop
-            data.loc[id,'departureAt']=respuesta['data'][id]['itineraries'][0]['segments'][0]['departure']['at']     
+            data.loc[id,'departureAt']=respuesta['data'][id]['itineraries'][0]['segments'][0]['departure']['at'] 
+            data.loc[id,'arrivalAt']=respuesta['data'][id]['itineraries'][0]['segments'][0]['arrival']['at'] 
             data.loc[id,'departureOriginIata']=respuesta['data'][id]['itineraries'][0]['segments'][0]['departure']['iataCode']
             data.loc[id,'departureDestinationIata']=respuesta['data'][id]['itineraries'][0]['segments'][departureStop]['arrival']['iataCode']  
             
@@ -48,6 +49,7 @@ class buscador:
             returnStop=len(respuesta['data'][id]['itineraries'][1]['segments'])-1
             data.loc[id, 'returnStop']= returnStop        
             data.loc[id,'returnAt']=respuesta['data'][id]['itineraries'][1]['segments'][0]['departure']['at'] 
+            data.loc[id,'arrivalreturnerAt']=respuesta['data'][id]['itineraries'][1]['segments'][0]['arrival']['at'] 
             data.loc[id,'returnOriginIataCode']=respuesta['data'][id]['itineraries'][1]['segments'][0]['departure']['iataCode'] 
             data.loc[id,'returnDestinationIata']=respuesta['data'][id]['itineraries'][1]['segments'][returnStop]['arrival']['iataCode']  
             
@@ -62,6 +64,6 @@ class buscador:
         data["priceBase"] = data.priceBase.astype(float)
         data["priceTotal"] = data.priceTotal.astype(float)
 
-    
-
+        data["priceBase"]=round(convertir_euros_a_pesos(data["priceBase"]),0)
+        data["priceTotal"]=round(convertir_euros_a_pesos(data["priceTotal"]),0)
         return data

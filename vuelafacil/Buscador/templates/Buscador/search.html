@@ -1,36 +1,94 @@
 {% extends 'Buscador/base.html' %}
+{% load static %}
 {% block content %}
 
+<div style= "padding-top:80px">
 <h4 class="mb-0"><center> <strong>Las mejores opciones para tu vuelo</strong></center></h4>
-<div class="list-group">
-
 {% for id in id %}
 
   <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-	<img src="https://raw.githubusercontent.com/lapicos/vuelafacil/main/boarding-pass.png" alt="twbs" width="45" height="45" class="rounded-circle flex-shrink-0">
+	
 	<div class="d-flex gap-2 w-100 justify-content-between">
-	  <div>
-		<h4 class="mb-0"><strong>Información del vuelo: IDA </strong></h4>
-		<h6 class="mb-0"><strong> ID: {{id}}</strong></h6>
-		<h6 class="mb-0"><strong> Ciudad de origen: {{departureorigin.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Ciudad de destino: {{departuredestination.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Fecha y hora del viaje: {{departureat.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Duración del viaje: {{durationdeparture.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Número de paradas: {{stopdeparture.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Aerolínea: {{airline.0}}</strong></h6>
-		<br>
-		<h4 class="mb-0"><strong>Información del vuelo: REGRESO </strong></h4>
-		<h6 class="mb-0"><strong> Ciudad de origen: {{returnorigin.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Ciudad de origen: {{returndeparture.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Fecha y hora del viaje: {{returnat.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Duración del viaje: {{durationreturn.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Número de paradas: {{stopreturn.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Aerolínea: {{airline.0}}</strong></h6>
-		<br>
-		<h4 class="mb-0"><strong>Información de la tarifa </strong></h4>
-		<h6 class="mb-0"><strong> Precio base: {{pricebase.0}}</strong></h6>
-		<h6 class="mb-0"><strong> Precio total: {{pricetotal.0}}</strong></h6>
-	  </div>
+			
+			<h4 align="center" class="mb-0" style="background-color:#5D6D7E; color:#FFFFFF"> <img src="https://raw.githubusercontent.com/lapicos/vuelafacil/main/boarding-pass.png" alt="twbs" width="45" height="45" class="rounded-circle flex-shrink-0"> <strong> Opción de viaje # {{id}}: </strong> </h4>
+			<table style="width:100%">
+			<tbody>
+			<tr>
+			<tr>
+				<td style="background-color:#5D6D7E; color:#FFFFFF"> <h5 align="center" class="mb-0"> <img src="https://raw.githubusercontent.com/lapicos/vuelafacil/main/takeoff.png" alt="twbs" width="38" height="38" class="rounded-circle flex-shrink-0"><strong> {{departureat.0}} </strong> </h5> </td>
+				<td> <h6 align="center" class="mb-0"> <strong> Origen: <br> {{departureorigin.0}} </br></strong> </h6></td>
+				<td> <h6 align="center" class="mb-0"><strong> Destino: <br>{{departuredestination.0}} </br></strong> </h6> </td>
+				<td rowspan="4"> <h6 align="center" class="mb-0"><strong> Precio base  <br>{{pricebase.0}}  </br> </strong> </h6>
+				<h6 align="center" class="mb-0"><strong> Precio Total  <br>{{pricetotal.0}}  </br> </strong> </h6> </td>
+			</tr>
+			<tr>
+				<td> <h6 align="center" class="mb-0"> <strong> Aerolínea:  <br> {{airline.0}} </br> </strong> </h6> </td>
+				<td> <h6 align="center" class="mb-0"><strong> Hora de salida: <br> {{departureat.0}} </br> </td>
+				<td> <h6 align="center" class="mb-0"><strong> Hora de llegada: <br>{{arrivalat.0}} </br> </td>
+			</tr>
+			</tr>
+			
+			<tr>
+			<tr>
+				<td style="background-color:#5D6D7E; color:#FFFFFF"> <h5 align="center"class="mb-0"> <img src="https://raw.githubusercontent.com/lapicos/vuelafacil/main/landing.png" alt="twbs" width="38" height="38" class="rounded-circle flex-shrink-0"><strong> {{returnat.0}} </strong> </h5> </td>
+				<td> <h6 align="center" class="mb-0"> <strong> Origen: <br> {{returnorigin.0}} </br></strong> </h6></td>
+				<td> <h6 align="center" class="mb-0"><strong> Destino: <br>{{returndestination.0}} </br></strong> </h6> </td>
+			</tr>
+			<tr>
+				<td> <h6 align="center" class="mb-0"> <strong> Aerolínea:  <br> {{airline.0}} </br> </strong> </h6> </td>
+				<td> <h6 align="center" class="mb-0"><strong> Hora de salida: <br> {{returnat.0}} </br> </td>
+				<td> <h6 align="center" class="mb-0"><strong> Hora de llegada: <br>{{arrivalreturnerAt.0}} </br> </td>
+			</tr>
+			</tr>
+			
+			</tbody>		
+			<table>
+	
+			
+			<!--
+
+				
+				
+				
+				<tr> 
+					<td> <h6 class="mb-0"><strong> Ciudad de origen: {{departureorigin.0}}</strong></h6> </td>
+					<td> <h6 class="mb-0"><strong> Ciudad de origen: {{returnorigin.0}}</strong></h6></td>
+					<td> <h6 class="mb-0"><strong> Precio base: ${{pricebase.0}}</strong></h6></td>
+				</tr>
+				
+				<th>
+					
+					<h6 class="mb-0"><strong> ID: </strong>{{id}} </h6>
+					<h6 class="mb-0"><strong> Ciudad de origen: {{departureorigin.0}}</strong></h6>
+					<h6 class="mb-0"><strong> Ciudad de destino: {{departuredestination.0}}</strong></h6>
+					<h6 class="mb-0"><strong> Fecha y hora del viaje: {{departureat.0}}</strong></h6>
+					<h6 class="mb-0"><strong> Duración del viaje: {{durationdeparture.0}}</strong></h6>
+					<h6 class="mb-0"><strong> Número de paradas: {{stopdeparture.0}}</strong></h6>
+					<h6 class="mb-0"><strong> Aerolínea: {{airline.0}}</strong></h6>
+				</th>
+				<td>   
+				<td> Vuelo regreso </td>
+				</td>
+				<th>
+				<h4 class="mb-0"><strong>Información del vuelo: REGRESO </strong></h4>
+				<h6 class="mb-0"><strong> Ciudad de origen: {{returnorigin.0}}</strong></h6>
+				<h6 class="mb-0"><strong> Ciudad de origen: {{returndeparture.0}}</strong></h6>
+				<h6 class="mb-0"><strong> Fecha y hora del viaje: {{returnat.0}}</strong></h6>
+				<h6 class="mb-0"><strong> Duración del viaje: {{durationreturn.0}}</strong></h6>
+				<h6 class="mb-0"><strong> Número de paradas: {{stopreturn.0}}</strong></h6>
+				<h6 class="mb-0"><strong> Aerolínea: {{airline.0}}</strong></h6>
+				</th>
+				<br>
+				<td> 
+				</td>
+				<td>
+				<h4 class="mb-0"><strong>Información de la tarifa </strong></h4>
+				<h6 class="mb-0"><strong> Precio base: ${{pricebase.0}}</strong></h6>
+				<h6 class="mb-0"><strong> Precio total: ${{pricetotal.0}}</strong></h6>
+				</td>
+				-->
+			</table>
+	  
 	</div>
   </a>
 
